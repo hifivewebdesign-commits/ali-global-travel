@@ -1,0 +1,14 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.log
+
+# Dependencies
+node_modules/
+
+# Cloudflare Wrangler
+.wrangler/

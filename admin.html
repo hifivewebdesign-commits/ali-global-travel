@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | ALI GLOBAL TRAVEL & TOURS SDN. BHD.</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/brand/logo.jpg">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main & Admin CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body class="admin-body">
+
+  <!-- Login Modal / Screen -->
+  <div class="admin-login-overlay" id="admin-login-overlay">
+    <div class="admin-login-card">
+      <img src="assets/images/brand/logo.jpg" alt="ALI GLOBAL" class="login-logo">
+      <h2>Staff & Admin Portal</h2>
+      <p>ALI GLOBAL TRAVEL & TOURS SDN. BHD.<br>Content Management System</p>
+
+      <div id="login-error" class="form-alert error" style="display:none; margin-bottom:1rem;"></div>
+
+      <form id="admin-login-form">
+        <div class="form-group" style="text-align:left;">
+          <label for="admin-password">Administrator Password</label>
+          <input type="password" id="admin-password" class="form-control" placeholder="Enter admin password" required autocomplete="current-password">
+          <small style="color:var(--admin-muted); font-size:0.75rem; margin-top:0.3rem; display:block;">Default password: <code>aliglobal2026</code></small>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%; margin-top:1rem;">
+          <i class="fa-solid fa-right-to-bracket"></i> Login to Dashboard
+        </button>
+      </form>
+      <div style="margin-top:1.5rem;">
+        <a href="index.html" style="font-size:0.85rem; color:var(--admin-blue); font-weight:600;">
+          <i class="fa-solid fa-arrow-left"></i> Return to Website
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Application Layout -->
+  <div class="admin-layout">
+    
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-brand">
+        <img src="assets/images/brand/logo.jpg" alt="Logo" class="sidebar-logo">
+        <span style="font-weight:800; font-size:0.95rem; letter-spacing:-0.02em;">ALI GLOBAL</span>
+      </div>
+
+      <nav class="admin-nav">
+        <a class="admin-nav-item active" data-tab="overview">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Overview</span>
+        </a>
+        <a class="admin-nav-item" data-tab="tours">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <span>Tour Packages</span>
+        </a>
+        <a class="admin-nav-item" data-tab="destinations">
+          <i class="fa-solid fa-city"></i>
+          <span>Destinations</span>
+        </a>
+        <a class="admin-nav-item" data-tab="vehicles">
+          <i class="fa-solid fa-van-shuttle"></i>
+          <span>Vehicles & Fleet</span>
+        </a>
+        <a class="admin-nav-item" data-tab="gallery">
+          <i class="fa-solid fa-images"></i>
+          <span>Photo Gallery</span>
+        </a>
+        <a class="admin-nav-item" data-tab="enquiries">
+          <i class="fa-solid fa-inbox"></i>
+          <span>Customer Enquiries</span>
+          <span class="admin-nav-badge" id="nav-enq-badge" style="display:none;">0</span>
+        </a>
+        <a class="admin-nav-item" data-tab="settings">
+          <i class="fa-solid fa-gear"></i>
+          <span>Website Settings</span>
+        </a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div>
+          <div style="font-size:0.82rem; font-weight:700;">Mr Ali (Admin)</div>
+          <div style="font-size:0.72rem; opacity:0.7;">MOTAC L/N 13304</div>
+        </div>
+        <button id="admin-logout-btn" title="Logout" style="background:none; border:none; color:#f87171; font-size:1.1rem; cursor:pointer;">
+          <i class="fa-solid fa-power-off"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      
+      <!-- Topbar -->
+      <header class="admin-topbar">
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <h2 style="font-size:1.3rem; font-weight:800; color:var(--admin-navy); margin:0;">
+            Content Management System
+          </h2>
+        </div>
+        <div style="display:flex; align-items:center; gap:1rem;">
+          <a href="index.html" target="_blank" class="btn btn-outline-primary btn-sm">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> View Live Website
+          </a>
+        </div>
+      </header>
+
+      <div class="admin-content">
+
+        <!-- TAB 1: OVERVIEW -->
+        <div class="admin-tab-pane active" id="tab-overview">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#eaf2fc; color:var(--admin-blue);"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div>
+                <div class="stat-val" id="stat-tours-count">11</div>
+                <div class="stat-label">Tour Packages</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#eaf6e9; color:var(--admin-green);"><i class="fa-solid fa-earth-asia"></i></div>
+              <div>
+                <div class="stat-val" id="stat-dest-count">11</div>
+                <div class="stat-label">Destinations</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#fff7e6; color:#d46b08;"><i class="fa-solid fa-van-shuttle"></i></div>
+              <div>
+                <div class="stat-val" id="stat-veh-count">4</div>
+                <div class="stat-label">Fleet Vehicles</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#f3e8ff; color:#7e22ce;"><i class="fa-solid fa-images"></i></div>
+              <div>
+                <div class="stat-val" id="stat-gal-count">21</div>
+                <div class="stat-label">Gallery Photos</div>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-icon" style="background:#fee2e2; color:#b91c1c;"><i class="fa-solid fa-envelope-open-text"></i></div>
+              <div>
+                <div class="stat-val" id="stat-enq-count">0</div>
+                <div class="stat-label">Total Enquiries</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Action Guide -->
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h3><i class="fa-solid fa-bolt" style="color:#eab308;"></i> Welcome Mr Ali! Website Management Quick Guide</h3>
+            </div>
+            <p style="color:var(--admin-muted); font-size:0.95rem; line-height:1.7;">
+              From this portal, you can independently update everything on your website without any coding knowledge:
+            </p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.5rem; margin-top:1.5rem;">
+              <div style="background:#f8fafc; padding:1.2rem; border-radius:8px; border:1px solid var(--admin-border);">
+                <strong style="color:var(--admin-navy); display:block; margin-bottom:0.4rem;"><i class="fa-solid fa-tag text-primary"></i> Update Tour Prices</strong>
+                <p style="font-size:0.85rem; color:var(--admin-muted); margin:0;">Go to <strong>Tour Packages</strong> tab. Type new pricing directly in the table or edit package details.</p>
+              </div>
+              <div style="background:#f8fafc; padding:1.2rem; border-radius:8px; border:1px solid var(--admin-border);">
+                <strong style="color:var(--admin-navy); display:block; margin-bottom:0.4rem;"><i class="fa-solid fa-camera text-success"></i> Upload New Photos</strong>
+                <p style="font-size:0.85rem; color:var(--admin-muted); margin:0;">Go to <strong>Photo Gallery</strong> tab and click "Add Photo" to upload customer trips and vehicle moments.</p>
+              </div>
+              <div style="background:#f8fafc; padding:1.2rem; border-radius:8px; border:1px solid var(--admin-border);">
+                <strong style="color:var(--admin-navy); display:block; margin-bottom:0.4rem;"><i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> Instant WhatsApp Replies</strong>
+                <p style="font-size:0.85rem; color:var(--admin-muted); margin:0;">Check <strong>Customer Enquiries</strong> and click the green WhatsApp icon to directly chat with potential guests.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: TOURS & PACKAGES -->
+        <div class="admin-tab-pane" id="tab-tours">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Tour Packages Management</h3>
+                <p style="font-size:0.85rem; color:var(--admin-muted); margin:0;">Edit tour titles, pricing notes, attractions, optional activities, or add new tour packages.</p>
+              </div>
+              <button class="btn btn-primary" id="btn-add-tour">
+                <i class="fa-solid fa-plus"></i> Add New Tour Package
+              </button>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Code</th>
+                    <th>Photo</th>
+                    <th>Tour Title</th>
+                    <th>Category</th>
+                    <th>Pricing Note</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tours-table-body">
+                  <!-- Dynamic Tours -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: DESTINATIONS -->
+        <div class="admin-tab-pane" id="tab-destinations">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Malaysia Destination Management</h3>
+                <p style="font-size:0.85rem; color:var(--admin-muted); margin:0;">Manage destination cards, photographs, taglines and descriptions displayed on homepage.</p>
+              </div>
+              <button class="btn btn-primary" id="btn-add-dest">
+                <i class="fa-solid fa-plus"></i> Add Destination
+              </button>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Photo</th>
+                    <th>Destination Name</th>
+                    <th>Tagline</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="destinations-table-body">
+                  <!-- Dynamic Destinations -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 4: VEHICLES & FLEET -->
+        <div class="admin-tab-pane" id="tab-vehicles">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Transportation Fleet Management</h3>
+                <p style="font-size:0.85rem; color:var(--admin-muted); margin:0;">Manage vehicles, replace photos, edit passenger seating capacities and amenity specifications.</p>
+              </div>
+              <button class="btn btn-primary" id="btn-add-vehicle">
+                <i class="fa-solid fa-plus"></i> Add Vehicle
+              </button>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Photo</th>
+                    <th>Vehicle Name</th>
+                    <th>Capacity</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="vehicles-table-body">
+                  <!-- Dynamic Vehicles -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 5: GALLERY -->
+        <div class="admin-tab-pane" id="tab-gallery">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Photo Gallery Management</h3>
+                <p style="font-size:0.85rem; color:var(--admin-muted); margin:0;">Upload guest photos, tour moments and vehicle images into categorized albums.</p>
+              </div>
+              <button class="btn btn-primary" id="btn-add-gallery">
+                <i class="fa-solid fa-upload"></i> Upload Photo to Gallery
+              </button>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:1.2rem;" id="admin-gallery-grid">
+              <!-- Dynamic Gallery Cards -->
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 6: CUSTOMER ENQUIRIES -->
+        <div class="admin-tab-pane" id="tab-enquiries">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Customer Travel Enquiries</h3>
+                <p style="font-size:0.85rem; color:var(--admin-muted); margin:0;">View visitor submissions from website contact form, change follow-up status, or chat on WhatsApp.</p>
+              </div>
+              <button class="btn btn-outline-primary" id="btn-export-enquiries">
+                <i class="fa-solid fa-download"></i> Export to CSV
+              </button>
+            </div>
+
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Received</th>
+                    <th>Customer Name</th>
+                    <th>Contact</th>
+                    <th>Destination & Dates</th>
+                    <th>Status</th>
+                    <th>WhatsApp</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="enquiries-table-body">
+                  <!-- Dynamic Enquiries -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 7: WEBSITE SETTINGS -->
+        <div class="admin-tab-pane" id="tab-settings">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <div>
+                <h3>Company & Website Content Settings</h3>
+                <p style="font-size:0.85rem; color:var(--admin-muted); margin:0;">Update official company numbers, address, MOTAC, SSM, and homepage texts.</p>
+              </div>
+            </div>
+
+            <form id="settings-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Company Legal Name</label>
+                  <input type="text" id="set-company-name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label>Tagline</label>
+                  <input type="text" id="set-tagline" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Business Registration (SSM)</label>
+                  <input type="text" id="set-ssm" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label>MOTAC Licence Number</label>
+                  <input type="text" id="set-motac" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Contact Person</label>
+                  <input type="text" id="set-contact-person" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label>Primary WhatsApp (digits only e.g. 60165006972)</label>
+                  <input type="text" id="set-wa-primary" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Primary Phone Display</label>
+                  <input type="text" id="set-phone-primary" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label>Secondary Phone</label>
+                  <input type="text" id="set-phone-sec" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" id="set-email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                  <label>Instagram URL</label>
+                  <input type="url" id="set-ig-url" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Office Address</label>
+                <textarea id="set-address" class="form-control" rows="2" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label>Google Maps Link</label>
+                <input type="url" id="set-maps-url" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label>Homepage Main Hero Heading</label>
+                <input type="text" id="set-hero-title" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label>Homepage Hero Description</label>
+                <textarea id="set-hero-desc" class="form-control" rows="3" required></textarea>
+              </div>
+
+              <div style="display:flex; justify-content:flex-end; margin-top:2rem;">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  <i class="fa-solid fa-floppy-disk"></i> Save Settings
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Shared Modal Overlay -->
+  <div class="admin-modal-overlay" id="admin-modal-overlay">
+    <div class="admin-modal">
+      <div class="admin-modal-header">
+        <h3 id="admin-modal-title">Modal Title</h3>
+        <button class="admin-modal-close" id="admin-modal-close">&times;</button>
+      </div>
+      <div id="admin-modal-body">
+        <!-- Dynamic Modal Form Content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification element -->
+  <div class="admin-toast"></div>
+
+  <!-- Scripts -->
+  <script src="assets/js/store.js"></script>
+  <script src="assets/js/admin.js"></script>
+</body>
+</html>
+
