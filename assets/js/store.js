@@ -571,10 +571,10 @@ const DEFAULT_DB = {
     },
     {
       "id": "gal-v7",
-      "title": "18-Seater White Tour Van",
+      "title": "Hyundai Starex 18-Seater Executive MPV",
       "category": "transport",
       "categoryName": "Transportation",
-      "image": "assets/images/vehicles/vehicle-2.jpg"
+      "image": "assets/images/vehicles/vehicle-7.jpg"
     },
     {
       "id": "gal-v8",
@@ -582,6 +582,62 @@ const DEFAULT_DB = {
       "category": "transport",
       "categoryName": "Transportation",
       "image": "assets/images/vehicles/vehicle-8.jpg"
+    },
+    {
+      "id": "gal-ticket-poster",
+      "title": "Official Attraction Tickets & Tour Packages",
+      "category": "attractions",
+      "categoryName": "Attractions & Sightseeing",
+      "image": "assets/images/attractions/attraction-tickets-poster.jpg"
+    },
+    {
+      "id": "gal-chinatown",
+      "title": "Petaling Street Chinatown, Kuala Lumpur",
+      "category": "attractions",
+      "categoryName": "Attractions & Sightseeing",
+      "image": "assets/images/packages/kl-4.jpg"
+    },
+    {
+      "id": "gal-central-market",
+      "title": "Central Market (Pasar Seni), Kuala Lumpur",
+      "category": "attractions",
+      "categoryName": "Attractions & Sightseeing",
+      "image": "assets/images/destinations/central-market.jpg"
+    },
+    {
+      "id": "gal-ipoh",
+      "title": "Concubine Lane Heritage Street, Ipoh",
+      "category": "destinations",
+      "categoryName": "Malaysia Destinations",
+      "image": "assets/images/destinations/ipoh.jpg"
+    },
+    {
+      "id": "gal-kuala-selangor",
+      "title": "Bukit Melawati Nature & Fortress, Kuala Selangor",
+      "category": "destinations",
+      "categoryName": "Malaysia Destinations",
+      "image": "assets/images/destinations/kuala-selangor.jpg"
+    },
+    {
+      "id": "gal-penang-art",
+      "title": "George Town Heritage Street Art, Penang",
+      "category": "attractions",
+      "categoryName": "Attractions & Sightseeing",
+      "image": "assets/images/packages/penang-1.jpg"
+    },
+    {
+      "id": "gal-aquaria",
+      "title": "Aquaria KLCC Oceanarium Tunnel",
+      "category": "attractions",
+      "categoryName": "Attractions & Sightseeing",
+      "image": "assets/images/attractions/aquaria-klcc.jpg"
+    },
+    {
+      "id": "gal-bird-park",
+      "title": "KL Bird Park Hornbill & Aviary",
+      "category": "attractions",
+      "categoryName": "Attractions & Sightseeing",
+      "image": "assets/images/attractions/kl-bird-park.jpg"
     },
     {
       "id": "gal-d1",
@@ -630,7 +686,7 @@ const DEFAULT_DB = {
 };
 
 const Store = (function () {
-  const STORAGE_KEY = 'ali_global_travel_data_v3';
+  const STORAGE_KEY = 'ali_global_travel_data_v4';
   let isApiAvailable = false;
   let cache = null;
 
