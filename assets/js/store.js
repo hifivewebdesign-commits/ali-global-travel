@@ -467,6 +467,14 @@ const DEFAULT_DB = {
       "description": "Modern white touring van perfect for medium-sized groups, private family holidays, and convenient KLIA/KLIA2 airport transfers.",
       "image": "assets/images/vehicles/vehicle-2.jpg",
       "features": ["18 Comfortable Seats", "Ultra-Smooth Ride", "Rear AC Vents", "Spacious Luggage Area", "Airport Transfer Specialist"]
+    },
+    {
+      "id": "v-10-starex",
+      "name": "Hyundai Starex – 10-Seater",
+      "capacity": "10 Passengers",
+      "description": "A convenient and luxurious choice for smaller groups, VIP delegations, and private family travel arrangements throughout Peninsular Malaysia.",
+      "image": "assets/images/vehicles/vehicle-7.jpg",
+      "features": ["10 Executive Seats", "Ultra-Smooth Suspension", "Rear AC Vents", "Tinted Privacy Windows", "Airport Transfer Specialist"]
     }
   ],
   "gallery": [
