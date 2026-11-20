@@ -469,12 +469,12 @@ const DEFAULT_DB = {
       "features": ["18 Comfortable Seats", "Ultra-Smooth Ride", "Rear AC Vents", "Spacious Luggage Area", "Airport Transfer Specialist"]
     },
     {
-      "id": "v-10-starex",
-      "name": "Hyundai Starex – 10-Seater",
-      "capacity": "10 Passengers",
-      "description": "A convenient and luxurious choice for smaller groups, VIP delegations, and private family travel arrangements throughout Peninsular Malaysia.",
+      "id": "v-18-starex",
+      "name": "Hyundai Starex – 18-Seater",
+      "capacity": "18 Passengers",
+      "description": "A convenient and luxurious choice for tour groups, VIP delegations, and private family travel arrangements throughout Peninsular Malaysia.",
       "image": "assets/images/vehicles/vehicle-7.jpg",
-      "features": ["10 Executive Seats", "Ultra-Smooth Suspension", "Rear AC Vents", "Tinted Privacy Windows", "Airport Transfer Specialist"]
+      "features": ["18 Executive Seats", "Ultra-Smooth Suspension", "Rear AC Vents", "Tinted Privacy Windows", "Airport Transfer Specialist"]
     }
   ],
   "gallery": [
@@ -630,7 +630,7 @@ const DEFAULT_DB = {
 };
 
 const Store = (function () {
-  const STORAGE_KEY = 'ali_global_travel_data_v2';
+  const STORAGE_KEY = 'ali_global_travel_data_v3';
   let isApiAvailable = false;
   let cache = null;
 
