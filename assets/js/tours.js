@@ -79,9 +79,44 @@ document.addEventListener('DOMContentLoaded', async () => {
     `).join('');
   }
 
+  // Helper: Bind thumbnails and lightbox triggers on tour cards
+  function bindTourThumbs(container = document) {
+    container.querySelectorAll('.tour-card-detailed').forEach(card => {
+      const mainImg = card.querySelector('.tour-main-img-wrap img');
+      const mainWrap = card.querySelector('.tour-main-img-wrap');
+      const captionEl = card.querySelector('.tour-thumb-caption');
+      const thumbBtns = card.querySelectorAll('.tour-thumb-btn');
+
+      thumbBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const targetSrc = btn.getAttribute('data-target-src');
+          const caption = btn.getAttribute('data-caption');
+
+          if (mainImg && targetSrc) {
+            mainImg.src = targetSrc;
+          }
+          if (mainWrap && targetSrc) {
+            mainWrap.setAttribute('data-lightbox-src', targetSrc);
+            mainWrap.setAttribute('data-lightbox-caption', caption || '');
+          }
+          if (captionEl && caption) {
+            captionEl.innerHTML = `<i class="fa-solid fa-camera"></i> ${caption}`;
+          }
+          thumbBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+    });
+    if (window.initLightboxTriggers) {
+      window.initLightboxTriggers();
+    }
+  }
+
   // 3. Filter on tours.html
   const toursContainer = document.getElementById('tours-list-container');
   if (toursContainer) {
+    bindTourThumbs(toursContainer);
     const allTours = await Store.getTours();
     const filterButtons = document.querySelectorAll('.tours-filter-btn');
 
@@ -97,6 +132,21 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       toursContainer.innerHTML = filtered.map(t => {
         const waUrl = getTourWhatsAppUrl(t.title);
+
+        const galleryItems = t.gallery && t.gallery.length > 0 
+          ? t.gallery 
+          : [{ src: t.image, caption: t.title }];
+
+        const thumbsHtml = galleryItems.length > 1 ? `
+          <div class="tour-thumbs-row">
+            ${galleryItems.map((g, idx) => `
+              <button type="button" class="tour-thumb-btn ${idx === 0 ? 'active' : ''}" data-target-src="${g.src}" data-caption="${g.caption}" title="${g.caption}">
+                <img src="${g.src}" alt="${g.caption}" loading="lazy">
+              </button>
+            `).join('')}
+            <span class="tour-thumb-caption"><i class="fa-solid fa-camera"></i> ${galleryItems[0].caption}</span>
+          </div>
+        ` : '';
 
         const landmarksHtml = t.landmarks && t.landmarks.length > 0 ? `
           <div class="tour-spec-block">
@@ -138,7 +188,10 @@ document.addEventListener('DOMContentLoaded', async () => {
           <article class="tour-card-detailed" id="${t.id}">
             <div class="tour-card-media">
               <span class="tour-badge-top">${t.number}</span>
-              <img src="${t.image}" alt="${t.title}" loading="lazy" onerror="this.src='assets/images/destinations/kuala-lumpur.jpg'">
+              <div class="tour-main-img-wrap" data-lightbox data-lightbox-src="${galleryItems[0].src}" data-lightbox-caption="${galleryItems[0].caption}">
+                <img src="${galleryItems[0].src}" alt="${t.title}" loading="lazy" onerror="this.src='assets/images/packages/kl-1.jpg'">
+              </div>
+              ${thumbsHtml}
             </div>
             <div class="tour-card-content">
               <div>
@@ -165,6 +218,8 @@ document.addEventListener('DOMContentLoaded', async () => {
           </article>
         `;
       }).join('');
+
+      bindTourThumbs(toursContainer);
     }
 
     // Attach click events to filter buttons
