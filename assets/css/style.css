@@ -313,7 +313,7 @@ button, input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 82px;
+  height: 92px;
 }
 
 .brand-logo-wrap {
@@ -323,7 +323,7 @@ button, input, select, textarea {
 }
 
 .brand-logo {
-  height: 58px;
+  height: 76px;
   width: auto;
   object-fit: contain;
   transition: var(--transition-fast);
@@ -1961,7 +1961,7 @@ textarea.form-control {
 .hero-video-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(7, 43, 94, 0.90) 0%, rgba(8, 70, 140, 0.78) 55%, rgba(4, 25, 56, 0.92) 100%);
+  background: linear-gradient(135deg, rgba(7, 43, 94, 0.24) 0%, rgba(8, 70, 140, 0.35) 55%, rgba(4, 25, 56, 0.25) 100%);
   z-index: 1;
 }
 

@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     homeDestContainer.innerHTML = destinations.map(dest => `
       <div class="destination-card">
         <div class="dest-image-wrap">
-          <img src="${dest.image}" alt="${dest.name}" loading="lazy" onerror="this.src='assets/images/destinations/kuala-lumpur.jpg'">
+          <img src="${dest.image}" alt="${dest.name}" loading="lazy" onerror="this.src='assets/tourist attraction photos/KL city tour/KL city tour (1).jpeg'">
           <span class="dest-badge">Malaysia</span>
         </div>
         <div class="dest-content">
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <div class="tour-card-media">
               <span class="tour-badge-top">${t.number}</span>
               <div class="tour-main-img-wrap" data-lightbox data-lightbox-src="${galleryItems[0].src}" data-lightbox-caption="${galleryItems[0].caption}">
-                <img src="${galleryItems[0].src}" alt="${t.title}" loading="lazy" onerror="this.src='assets/images/packages/kl-1.jpg'">
+                <img src="${galleryItems[0].src}" alt="${t.title}" loading="lazy" onerror="this.src='assets/tourist attraction photos/KL city tour/KL city tour (1).jpeg'">
               </div>
               ${thumbsHtml}
             </div>

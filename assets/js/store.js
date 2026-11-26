@@ -31,7 +31,7 @@ const DEFAULT_DB = {
     {
       "id": "kuala-lumpur",
       "name": "Kuala Lumpur",
-      "image": "assets/images/destinations/kuala-lumpur.jpg",
+      "image": "assets/tourist attraction photos/KL city tour/KL city tour (1).jpeg",
       "tagline": "Iconic Skyline & Modern Heritage",
       "description": "Malaysia's buzzing capital, home to the magnificent PETRONAS Twin Towers, vibrant street markets, and modern shopping paradises.",
       "tourId": "tour-01"
@@ -39,7 +39,7 @@ const DEFAULT_DB = {
     {
       "id": "putrajaya",
       "name": "Putrajaya",
-      "image": "assets/images/destinations/putrajaya.jpg",
+      "image": "assets/tourist attraction photos/putrajaya/putrajaya (1).jpeg",
       "tagline": "Architectural Marvel & Garden City",
       "description": "Marvel at stunning pink domes of Putra Mosque, majestic bridges, and serene lakeside cruises in Malaysia's federal administrative center.",
       "tourId": "tour-11"
@@ -47,7 +47,7 @@ const DEFAULT_DB = {
     {
       "id": "genting-highlands",
       "name": "Genting Highlands",
-      "image": "assets/images/destinations/genting-highlands.jpg",
+      "image": "assets/tourist attraction photos/Genting highland/Genting highland (1).jpeg",
       "tagline": "Mountain Entertainment & Cool Breezes",
       "description": "A thrilling mountain resort with cable car rides, world-class indoor and outdoor theme parks, and cool highland mist.",
       "tourId": "tour-04"
@@ -55,7 +55,7 @@ const DEFAULT_DB = {
     {
       "id": "batu-caves",
       "name": "Batu Caves",
-      "image": "assets/images/destinations/batu-caves-murugan.jpg",
+      "image": "assets/tourist attraction photos/Batu caves Murugan temple/Batu caves Murugan temple (1).jpeg",
       "tagline": "Sacred Limestone Caves & Golden Murugan",
       "description": "Scale the iconic 272 rainbow steps under the gaze of the towering 140-foot golden Lord Murugan statue into ancient limestone caverns.",
       "tourId": "tour-04"
@@ -63,7 +63,7 @@ const DEFAULT_DB = {
     {
       "id": "cameron-highlands",
       "name": "Cameron Highlands",
-      "image": "assets/images/destinations/cameron-highlands.jpg",
+      "image": "assets/tourist attraction photos/cameron highland/cameron highland (1).jpeg",
       "tagline": "Rolling Tea Plantations & Strawberry Farms",
       "description": "Escape to refreshing mountain air, vast BOH tea plantations, fresh strawberry orchards, flower gardens, and the enchanted Mossy Forest.",
       "tourId": "tour-05"
@@ -71,7 +71,7 @@ const DEFAULT_DB = {
     {
       "id": "melaka",
       "name": "Melaka",
-      "image": "assets/images/destinations/melaka.jpg",
+      "image": "assets/tourist attraction photos/Melaka/Melaka (1).jpeg",
       "tagline": "UNESCO World Heritage & Colonial History",
       "description": "Step back through centuries of Portuguese, Dutch, and British history at Dutch Square, Jonker Street, and A Famosa.",
       "tourId": "tour-03"
@@ -79,7 +79,7 @@ const DEFAULT_DB = {
     {
       "id": "kuala-selangor",
       "name": "Kuala Selangor",
-      "image": "assets/images/destinations/kuala-selangor-nature.jpg",
+      "image": "assets/tourist attraction photos/kuala selangor tour/kuala selangor tour (1).jpeg",
       "tagline": "Firefly Sanctuaries & Coastal Wonder",
       "description": "Experience magical night boat rides amidst thousands of synchronised fireflies, historic Bukit Melawati, and pristine Sky Mirror tides.",
       "tourId": "tour-09"
@@ -87,7 +87,7 @@ const DEFAULT_DB = {
     {
       "id": "ipoh",
       "name": "Ipoh",
-      "image": "assets/images/destinations/ipoh.jpg",
+      "image": "assets/tourist attraction photos/ipoh tour/ipoh tour (1).jpeg",
       "tagline": "Colonial Charm & Culinary Capital",
       "description": "Famous for aromatic white coffee, historic Concubine Lane, British colonial architecture, and majestic limestone cave temples.",
       "tourId": "tour-08"
@@ -95,7 +95,7 @@ const DEFAULT_DB = {
     {
       "id": "penang",
       "name": "Penang",
-      "image": "assets/images/destinations/penang.jpg",
+      "image": "assets/tourist attraction photos/pulau pinang/pulau pinang (1).jpeg",
       "tagline": "Pearl of the Orient & World-Renowned Street Food",
       "description": "Explore UNESCO George Town street art, historic clan jetties, Kek Lok Si Temple, and unbeatable hawker gastronomy.",
       "tourId": "tour-07"
@@ -103,7 +103,7 @@ const DEFAULT_DB = {
     {
       "id": "johor-bahru",
       "name": "Johor Bahru",
-      "image": "assets/images/destinations/johor-bahru.jpg",
+      "image": "assets/tourist attraction photos/johor bahru/johor bahru (1).jpeg",
       "tagline": "Southern Gateway & Family Theme Parks",
       "description": "Rich heritage streets, royal mosques, premier duty-free outlet shopping, and family adventures at LEGOLAND Malaysia.",
       "tourId": "tour-06"
@@ -111,10 +111,18 @@ const DEFAULT_DB = {
     {
       "id": "langkawi",
       "name": "Langkawi",
-      "image": "assets/images/destinations/langkawi-beach.jpg",
+      "image": "assets/tourist attraction photos/langkawi/langkawi (1).jpeg",
       "tagline": "Jewel of Kedah & Tropical Island Paradise",
       "description": "Turquoise waters, iconic Langkawi SkyBridge, eagle feeding boat tours, pristine beaches, and duty-free shopping delights.",
       "tourId": "tour-10"
+    },
+    {
+      "id": "sekinchan",
+      "name": "Sekinchan Selangor",
+      "image": "assets/tourist attraction photos/Sekinchan selangor Tour/Sekinchan selangor Tour (1).jpeg",
+      "tagline": "Emerald Paddy Fields & Coastal Village",
+      "description": "Scenic rice bowl paddy fields, Pantai Redang beach, Wishing Tree, and fresh coastal seafood delights.",
+      "tourId": "tour-12"
     }
   ],
   "tours": [
@@ -123,12 +131,14 @@ const DEFAULT_DB = {
       "number": "TOUR 01",
       "title": "Kuala Lumpur City Tour",
       "category": "city",
-      "image": "assets/images/packages/kl-1.jpg",
+      "image": "assets/tourist attraction photos/KL city tour/KL city tour (1).jpeg",
       "gallery": [
-        { "src": "assets/images/packages/kl-1.jpg", "caption": "PETRONAS Twin Towers" },
-        { "src": "assets/images/packages/kl-2.jpg", "caption": "KL Tower Skyline" },
-        { "src": "assets/images/packages/kl-3.jpg", "caption": "Thean Hou Temple" },
-        { "src": "assets/images/packages/kl-4.jpg", "caption": "Chinatown & Central Market" }
+        { "src": "assets/tourist attraction photos/KL city tour/KL city tour (1).jpeg", "caption": "KL City Landmarks" },
+        { "src": "assets/tourist attraction photos/KL city tour/KL city tour (2).jpeg", "caption": "KL Skyline View" },
+        { "src": "assets/tourist attraction photos/KL city tour/KL city tour (3).jpeg", "caption": "Cultural Landmarks" },
+        { "src": "assets/tourist attraction photos/KL city tour/KL city tour (4).jpeg", "caption": "Heritage & Markets" },
+        { "src": "assets/tourist attraction photos/KL city tour/KL city tour (5).jpeg", "caption": "KL City Sightseeing" },
+        { "src": "assets/tourist attraction photos/KL city tour/KL city tour (6).jpeg", "caption": "Kuala Lumpur Highlights" }
       ],
       "intro": "Discover the iconic landmarks, cultural attractions and vibrant city life of Kuala Lumpur.",
       "landmarks": [
@@ -162,12 +172,12 @@ const DEFAULT_DB = {
       "number": "TOUR 02",
       "title": "Kuala Lumpur Shopping Tour",
       "category": "city",
-      "image": "assets/images/destinations/central-market.jpg",
+      "image": "assets/tourist attraction photos/Kl city shopping centre/Kl city shopping centre (1).jpeg",
       "gallery": [
-        { "src": "assets/images/destinations/central-market.jpg", "caption": "Central Market Pasar Seni" },
-        { "src": "assets/images/packages/kl-4.jpg", "caption": "Petaling Street Chinatown" },
-        { "src": "assets/images/packages/kl-1.jpg", "caption": "Suria KLCC Malls" },
-        { "src": "assets/images/destinations/kl-shopping.jpg", "caption": "Pavilion & Shopping Districts" }
+        { "src": "assets/tourist attraction photos/Kl city shopping centre/Kl city shopping centre (1).jpeg", "caption": "KL Shopping Malls" },
+        { "src": "assets/tourist attraction photos/Kl city shopping centre/Kl city shopping centre (2).jpeg", "caption": "Souvenirs & Markets" },
+        { "src": "assets/tourist attraction photos/Kl city shopping centre/Kl city shopping centre (3).jpeg", "caption": "City Shopping Centres" },
+        { "src": "assets/tourist attraction photos/Kl city shopping centre/Kl city shopping centre (4).jpeg", "caption": "Fashion & Outlets" }
       ],
       "intro": "Enjoy a shopping experience across Kuala Lumpur's famous shopping destinations, fashion streets and souvenir markets.",
       "landmarks": [
@@ -195,12 +205,12 @@ const DEFAULT_DB = {
       "number": "TOUR 03",
       "title": "Melaka Heritage Tour",
       "category": "heritage",
-      "image": "assets/images/packages/melaka-1.jpg",
+      "image": "assets/tourist attraction photos/Melaka/Melaka (1).jpeg",
       "gallery": [
-        { "src": "assets/images/packages/melaka-1.jpg", "caption": "Dutch Square Red Square" },
-        { "src": "assets/images/packages/melaka-3.jpg", "caption": "A Famosa Fortress" },
-        { "src": "assets/images/packages/melaka-2.jpg", "caption": "Melaka River & Jonker Walk" },
-        { "src": "assets/images/packages/melaka-4.jpg", "caption": "Melaka Straits Mosque" }
+        { "src": "assets/tourist attraction photos/Melaka/Melaka (1).jpeg", "caption": "Dutch Square Red Square" },
+        { "src": "assets/tourist attraction photos/Melaka/Melaka (2).jpeg", "caption": "Melaka Riverfront" },
+        { "src": "assets/tourist attraction photos/Melaka/Melaka (3).jpeg", "caption": "A Famosa Fortress" },
+        { "src": "assets/tourist attraction photos/Melaka/Melaka (4).jpeg", "caption": "Jonker Street Heritage" }
       ],
       "intro": "Explore the historical streets, cultural landmarks and heritage attractions of Melaka.",
       "landmarks": [
@@ -229,12 +239,13 @@ const DEFAULT_DB = {
       "number": "TOUR 04",
       "title": "Genting Highlands & Batu Caves Tour",
       "category": "nature",
-      "image": "assets/images/packages/genting-3.jpg",
+      "image": "assets/tourist attraction photos/Batu caves Murugan temple/Batu caves Murugan temple (1).jpeg",
       "gallery": [
-        { "src": "assets/images/packages/genting-3.jpg", "caption": "Batu Caves 140ft Golden Murugan" },
-        { "src": "assets/images/packages/genting-1.jpg", "caption": "Awana SkyWay Cable Car" },
-        { "src": "assets/images/packages/genting-4.jpg", "caption": "Chin Swee Caves Temple" },
-        { "src": "assets/images/packages/genting-2.jpg", "caption": "Genting Misty Peaks" }
+        { "src": "assets/tourist attraction photos/Batu caves Murugan temple/Batu caves Murugan temple (1).jpeg", "caption": "Batu Caves Murugan Temple" },
+        { "src": "assets/tourist attraction photos/Batu caves Murugan temple/Batu caves Murugan temple (2).jpeg", "caption": "Batu Caves Rainbow Steps" },
+        { "src": "assets/tourist attraction photos/Genting highland/Genting highland (1).jpeg", "caption": "Genting Highlands Resort" },
+        { "src": "assets/tourist attraction photos/Genting highland/Genting highland (2).jpeg", "caption": "Awana SkyWay Cable Car" },
+        { "src": "assets/tourist attraction photos/Genting highland/Genting highland (3).jpeg", "caption": "Genting Highland Views" }
       ],
       "intro": "Experience the colourful Batu Caves and the beautiful mountain attractions of Genting Highlands.",
       "landmarks": [
@@ -265,12 +276,12 @@ const DEFAULT_DB = {
       "number": "TOUR 05",
       "title": "Cameron Highlands Tour",
       "category": "nature",
-      "image": "assets/images/packages/cameron-1.jpg",
+      "image": "assets/tourist attraction photos/cameron highland/cameron highland (1).jpeg",
       "gallery": [
-        { "src": "assets/images/packages/cameron-1.jpg", "caption": "BOH Tea Sungei Palas" },
-        { "src": "assets/images/packages/cameron-2.jpg", "caption": "Cameron Valley Tea House" },
-        { "src": "assets/images/packages/cameron-3.jpg", "caption": "Fresh Strawberry Farm" },
-        { "src": "assets/images/packages/cameron-4.jpg", "caption": "Flora Park & Mossy Forest" }
+        { "src": "assets/tourist attraction photos/cameron highland/cameron highland (1).jpeg", "caption": "BOH Tea Plantations" },
+        { "src": "assets/tourist attraction photos/cameron highland/cameron highland (2).jpeg", "caption": "Cameron Valley Tea House" },
+        { "src": "assets/tourist attraction photos/cameron highland/cameron highland (3).jpeg", "caption": "Fresh Strawberry Farm" },
+        { "src": "assets/tourist attraction photos/cameron highland/cameron highland (4).jpeg", "caption": "Flora Park & Gardens" }
       ],
       "intro": "Enjoy the refreshing mountain atmosphere, beautiful tea plantations and scenic gardens of Cameron Highlands.",
       "landmarks": [
@@ -298,9 +309,12 @@ const DEFAULT_DB = {
       "number": "TOUR 06",
       "title": "Johor Bahru Tour",
       "category": "heritage",
-      "image": "assets/images/destinations/johor-bahru.jpg",
+      "image": "assets/tourist attraction photos/johor bahru/johor bahru (1).jpeg",
       "gallery": [
-        { "src": "assets/images/destinations/johor-bahru.jpg", "caption": "Sultan Abu Bakar State Mosque" }
+        { "src": "assets/tourist attraction photos/johor bahru/johor bahru (1).jpeg", "caption": "Johor Bahru Landmarks" },
+        { "src": "assets/tourist attraction photos/johor bahru/johor bahru (2).jpeg", "caption": "Heritage Street & Temples" },
+        { "src": "assets/tourist attraction photos/johor bahru/johor bahru (3).jpeg", "caption": "Johor Bahru Sightseeing" },
+        { "src": "assets/tourist attraction photos/johor bahru/johor bahru (4).jpeg", "caption": "Family & Shopping Highlights" }
       ],
       "intro": "Discover Johor Bahru's heritage landmarks, shopping attractions and family destinations.",
       "landmarks": [
@@ -330,12 +344,12 @@ const DEFAULT_DB = {
       "number": "TOUR 07",
       "title": "Penang Tour",
       "category": "heritage",
-      "image": "assets/images/packages/penang-2.jpg",
+      "image": "assets/tourist attraction photos/pulau pinang/pulau pinang (1).jpeg",
       "gallery": [
-        { "src": "assets/images/packages/penang-2.jpg", "caption": "Kek Lok Si Temple" },
-        { "src": "assets/images/packages/penang-1.jpg", "caption": "George Town Street Art" },
-        { "src": "assets/images/packages/penang-3.jpg", "caption": "Chew Jetty Waterfront" },
-        { "src": "assets/images/packages/penang-4.jpg", "caption": "Batu Ferringhi Coast" }
+        { "src": "assets/tourist attraction photos/pulau pinang/pulau pinang (1).jpeg", "caption": "George Town Heritage" },
+        { "src": "assets/tourist attraction photos/pulau pinang/pulau pinang (2).jpeg", "caption": "Kek Lok Si Temple" },
+        { "src": "assets/tourist attraction photos/pulau pinang/pulau pinang (3).jpeg", "caption": "Chew Jetty Waterfront" },
+        { "src": "assets/tourist attraction photos/pulau pinang/pulau pinang (4).jpeg", "caption": "Penang Hill & Coast" }
       ],
       "intro": "Explore the cultural heritage, scenic attractions and famous food destinations of Penang.",
       "landmarks": [
@@ -365,9 +379,12 @@ const DEFAULT_DB = {
       "number": "TOUR 08",
       "title": "Ipoh Tour",
       "category": "heritage",
-      "image": "assets/images/destinations/ipoh.jpg",
+      "image": "assets/tourist attraction photos/ipoh tour/ipoh tour (1).jpeg",
       "gallery": [
-        { "src": "assets/images/destinations/ipoh.jpg", "caption": "Concubine Lane Heritage" }
+        { "src": "assets/tourist attraction photos/ipoh tour/ipoh tour (1).jpeg", "caption": "Concubine Lane Heritage" },
+        { "src": "assets/tourist attraction photos/ipoh tour/ipoh tour (2).jpeg", "caption": "Ipoh Cave Temples" },
+        { "src": "assets/tourist attraction photos/ipoh tour/ipoh tour (3).jpeg", "caption": "Ipoh Colonial Landmarks" },
+        { "src": "assets/tourist attraction photos/ipoh tour/ipoh tour (4).jpeg", "caption": "Ipoh Scenic Attractions" }
       ],
       "intro": "Discover Ipoh's colonial architecture, historic streets, cave temples and famous local flavours.",
       "landmarks": [
@@ -397,10 +414,12 @@ const DEFAULT_DB = {
       "number": "TOUR 09",
       "title": "Kuala Selangor Tour",
       "category": "nature",
-      "image": "assets/images/destinations/kuala-selangor.jpg",
+      "image": "assets/tourist attraction photos/kuala selangor tour/kuala selangor tour (1).jpeg",
       "gallery": [
-        { "src": "assets/images/destinations/kuala-selangor.jpg", "caption": "Bukit Melawati & Fort" },
-        { "src": "assets/images/destinations/kuala-selangor-nature.jpg", "caption": "Mangroves & Nature Park" }
+        { "src": "assets/tourist attraction photos/kuala selangor tour/kuala selangor tour (1).jpeg", "caption": "Bukit Melawati & Fort" },
+        { "src": "assets/tourist attraction photos/kuala selangor tour/kuala selangor tour (2).jpeg", "caption": "Silvered Leaf Monkeys" },
+        { "src": "assets/tourist attraction photos/kuala selangor tour/kuala selangor tour (3).jpeg", "caption": "Firefly & River Cruise" },
+        { "src": "assets/tourist attraction photos/kuala selangor tour/kuala selangor tour (4).jpeg", "caption": "Kuala Selangor Coastal Views" }
       ],
       "intro": "Enjoy nature, coastal scenery and memorable evening experiences in Kuala Selangor.",
       "landmarks": [
@@ -428,12 +447,12 @@ const DEFAULT_DB = {
       "number": "TOUR 10",
       "title": "Langkawi Tour",
       "category": "beach",
-      "image": "assets/images/packages/langkawi-1.jpg",
+      "image": "assets/tourist attraction photos/langkawi/langkawi (1).jpeg",
       "gallery": [
-        { "src": "assets/images/packages/langkawi-1.jpg", "caption": "Langkawi SkyBridge" },
-        { "src": "assets/images/packages/langkawi-2.jpg", "caption": "Eagle Square Dataran Lang" },
-        { "src": "assets/images/packages/langkawi-3.jpg", "caption": "Kilim Mangrove Safari" },
-        { "src": "assets/images/packages/langkawi-4.jpg", "caption": "Pantai Cenang Beach" }
+        { "src": "assets/tourist attraction photos/langkawi/langkawi (1).jpeg", "caption": "Langkawi SkyBridge" },
+        { "src": "assets/tourist attraction photos/langkawi/langkawi (2).jpeg", "caption": "Kilim Mangrove Safari" },
+        { "src": "assets/tourist attraction photos/langkawi/langkawi (3).jpeg", "caption": "Pantai Cenang Beach" },
+        { "src": "assets/tourist attraction photos/langkawi/langkawi (4).jpeg", "caption": "Eagle Square Dataran Lang" }
       ],
       "intro": "Explore Langkawi's beautiful beaches, scenic cable car rides, island attractions and nature experiences.",
       "landmarks": [
@@ -463,12 +482,12 @@ const DEFAULT_DB = {
       "number": "TOUR 11",
       "title": "Putrajaya Tour",
       "category": "city",
-      "image": "assets/images/packages/putrajaya-1.jpg",
+      "image": "assets/tourist attraction photos/putrajaya/putrajaya (1).jpeg",
       "gallery": [
-        { "src": "assets/images/packages/putrajaya-1.jpg", "caption": "Putra Mosque Pink Dome" },
-        { "src": "assets/images/packages/putrajaya-2.jpg", "caption": "Seri Wawasan Bridge" },
-        { "src": "assets/images/packages/putrajaya-3.jpg", "caption": "Perdana Putra Complex" },
-        { "src": "assets/images/packages/putrajaya-4.jpg", "caption": "Putrajaya Lake Cruise" }
+        { "src": "assets/tourist attraction photos/putrajaya/putrajaya (1).jpeg", "caption": "Putra Mosque Pink Dome" },
+        { "src": "assets/tourist attraction photos/putrajaya/putrajaya (2).jpeg", "caption": "Putrajaya Lake & Cruise" },
+        { "src": "assets/tourist attraction photos/putrajaya/putrajaya (3).jpeg", "caption": "Perdana Putra Complex" },
+        { "src": "assets/tourist attraction photos/putrajaya/putrajaya (4).jpeg", "caption": "Seri Wawasan Bridge" }
       ],
       "intro": "Discover Putrajaya's beautiful architecture, impressive bridges, lakeside scenery and iconic landmarks.",
       "landmarks": [
@@ -490,6 +509,37 @@ const DEFAULT_DB = {
       ],
       "priceNote": "Contact us for pricing and availability",
       "featured": true,
+      "enabled": true
+    },
+    {
+      "id": "tour-12",
+      "number": "TOUR 12",
+      "title": "Sekinchan Selangor Tour",
+      "category": "nature",
+      "image": "assets/tourist attraction photos/Sekinchan selangor Tour/Sekinchan selangor Tour (1).jpeg",
+      "gallery": [
+        { "src": "assets/tourist attraction photos/Sekinchan selangor Tour/Sekinchan selangor Tour (1).jpeg", "caption": "Sekinchan Paddy Fields" },
+        { "src": "assets/tourist attraction photos/Sekinchan selangor Tour/Sekinchan selangor Tour (2).jpeg", "caption": "Paddy Processing Gallery" },
+        { "src": "assets/tourist attraction photos/Sekinchan selangor Tour/Sekinchan selangor Tour (3).jpeg", "caption": "Pantai Redang & Wishing Tree" },
+        { "src": "assets/tourist attraction photos/Sekinchan selangor Tour/Sekinchan selangor Tour (4).jpeg", "caption": "Fishing Village & Seafood" }
+      ],
+      "intro": "Explore Sekinchan's lush green and golden paddy fields, traditional fishing village, Pantai Redang beach and fresh seafood.",
+      "landmarks": [
+        "Sekinchan Scenic Paddy Fields",
+        "Paddy Processing Factory & Gallery",
+        "Pantai Redang & Wishing Tree",
+        "Bagan Fishing Village"
+      ],
+      "culture": [
+        "Traditional Rice Mill Experience",
+        "Coastal Fishing Village Life"
+      ],
+      "optionalShopping": [
+        "Local Rice, Mango & Dried Seafood Stalls"
+      ],
+      "optionalThemeParks": [],
+      "priceNote": "Contact us for pricing and availability",
+      "featured": false,
       "enabled": true
     }
   ],
@@ -519,20 +569,20 @@ const DEFAULT_DB = {
       "features": ["44 Reclining Seats", "Cold Climate Control", "Large Luggage Storage", "USB Charging Ports", "Licensed Bus Captain"]
     },
     {
-      "id": "v-18-white-van",
-      "name": "18-Seater White Tour Van",
-      "capacity": "18 Passengers",
+      "id": "v-14-white-van",
+      "name": "14-Seater Toyota Van",
+      "capacity": "14 Passengers",
       "description": "Modern white touring van perfect for medium-sized groups, private family holidays, and convenient KLIA/KLIA2 airport transfers.",
       "image": "assets/images/vehicles/vehicle-2.jpg",
-      "features": ["18 Comfortable Seats", "Ultra-Smooth Ride", "Rear AC Vents", "Spacious Luggage Area", "Airport Transfer Specialist"]
+      "features": ["14 Comfortable Seats", "Ultra-Smooth Ride", "Rear AC Vents", "Spacious Luggage Area", "Airport Transfer Specialist"]
     },
     {
-      "id": "v-18-starex",
-      "name": "Hyundai Starex – 18-Seater",
-      "capacity": "18 Passengers",
+      "id": "v-10-starex",
+      "name": "10-Seater Starex",
+      "capacity": "10 Passengers",
       "description": "A convenient and luxurious choice for tour groups, VIP delegations, and private family travel arrangements throughout Peninsular Malaysia.",
       "image": "assets/images/vehicles/vehicle-7.jpg",
-      "features": ["18 Executive Seats", "Ultra-Smooth Suspension", "Rear AC Vents", "Tinted Privacy Windows", "Airport Transfer Specialist"]
+      "features": ["10 Executive Seats", "Ultra-Smooth Suspension", "Rear AC Vents", "Tinted Privacy Windows", "Airport Transfer Specialist"]
     }
   ],
   "gallery": [
@@ -587,14 +637,14 @@ const DEFAULT_DB = {
     },
     {
       "id": "gal-v1",
-      "title": "Modern Tourist Fleet - Front View",
+      "title": "Van 18 seater - Front View",
       "category": "transport",
       "categoryName": "Transportation",
       "image": "assets/images/vehicles/vehicle-1.jpg"
     },
     {
       "id": "gal-v2",
-      "title": "Pristine White Passenger Tour Van",
+      "title": "14-Seater Toyota Van",
       "category": "transport",
       "categoryName": "Transportation",
       "image": "assets/images/vehicles/vehicle-2.jpg"
@@ -629,7 +679,7 @@ const DEFAULT_DB = {
     },
     {
       "id": "gal-v7",
-      "title": "Hyundai Starex 18-Seater Executive MPV",
+      "title": "10-Seater Starex Executive MPV",
       "category": "transport",
       "categoryName": "Transportation",
       "image": "assets/images/vehicles/vehicle-7.jpg"
@@ -650,38 +700,38 @@ const DEFAULT_DB = {
     },
     {
       "id": "gal-chinatown",
-      "title": "Petaling Street Chinatown, Kuala Lumpur",
+      "title": "Kuala Lumpur City Tour Highlights",
       "category": "attractions",
       "categoryName": "Attractions & Sightseeing",
-      "image": "assets/images/packages/kl-4.jpg"
+      "image": "assets/tourist attraction photos/KL city tour/KL city tour (2).jpeg"
     },
     {
       "id": "gal-central-market",
-      "title": "Central Market (Pasar Seni), Kuala Lumpur",
+      "title": "Kuala Lumpur City Shopping Centre",
       "category": "attractions",
       "categoryName": "Attractions & Sightseeing",
-      "image": "assets/images/destinations/central-market.jpg"
+      "image": "assets/tourist attraction photos/Kl city shopping centre/Kl city shopping centre (1).jpeg"
     },
     {
       "id": "gal-ipoh",
-      "title": "Concubine Lane Heritage Street, Ipoh",
+      "title": "Ipoh Old Town & Heritage Tour",
       "category": "destinations",
       "categoryName": "Malaysia Destinations",
-      "image": "assets/images/destinations/ipoh.jpg"
+      "image": "assets/tourist attraction photos/ipoh tour/ipoh tour (1).jpeg"
     },
     {
       "id": "gal-kuala-selangor",
-      "title": "Bukit Melawati Nature & Fortress, Kuala Selangor",
+      "title": "Kuala Selangor Nature & Heritage Tour",
       "category": "destinations",
       "categoryName": "Malaysia Destinations",
-      "image": "assets/images/destinations/kuala-selangor.jpg"
+      "image": "assets/tourist attraction photos/kuala selangor tour/kuala selangor tour (1).jpeg"
     },
     {
       "id": "gal-penang-art",
-      "title": "George Town Heritage Street Art, Penang",
+      "title": "Pulau Pinang (Penang) Heritage Tour",
       "category": "attractions",
       "categoryName": "Attractions & Sightseeing",
-      "image": "assets/images/packages/penang-1.jpg"
+      "image": "assets/tourist attraction photos/pulau pinang/pulau pinang (1).jpeg"
     },
     {
       "id": "gal-aquaria",
@@ -699,52 +749,59 @@ const DEFAULT_DB = {
     },
     {
       "id": "gal-d1",
-      "title": "PETRONAS Twin Towers, Kuala Lumpur",
+      "title": "Kuala Lumpur Iconic Landmarks",
       "category": "destinations",
       "categoryName": "Malaysia Destinations",
-      "image": "assets/images/destinations/kuala-lumpur.jpg"
+      "image": "assets/tourist attraction photos/KL city tour/KL city tour (1).jpeg"
     },
     {
       "id": "gal-d2",
       "title": "Putra Mosque & Waterfront, Putrajaya",
       "category": "destinations",
       "categoryName": "Malaysia Destinations",
-      "image": "assets/images/destinations/putrajaya.jpg"
+      "image": "assets/tourist attraction photos/putrajaya/putrajaya (1).jpeg"
     },
     {
       "id": "gal-d3",
-      "title": "Batu Caves Golden Murugan & Rainbow Stairs",
+      "title": "Batu Caves Murugan Temple",
       "category": "attractions",
       "categoryName": "Attractions & Sightseeing",
-      "image": "assets/images/destinations/batu-caves-murugan.jpg"
+      "image": "assets/tourist attraction photos/Batu caves Murugan temple/Batu caves Murugan temple (1).jpeg"
     },
     {
       "id": "gal-d4",
-      "title": "Emerald BOH Tea Plantations, Cameron Highlands",
+      "title": "Emerald Tea Plantations, Cameron Highlands",
       "category": "destinations",
       "categoryName": "Malaysia Destinations",
-      "image": "assets/images/destinations/cameron-highlands.jpg"
+      "image": "assets/tourist attraction photos/cameron highland/cameron highland (1).jpeg"
     },
     {
       "id": "gal-d5",
       "title": "Historic Dutch Red Square, Melaka",
       "category": "attractions",
       "categoryName": "Attractions & Sightseeing",
-      "image": "assets/images/destinations/melaka.jpg"
+      "image": "assets/tourist attraction photos/Melaka/Melaka (1).jpeg"
     },
     {
       "id": "gal-d6",
-      "title": "Tropical Beach Haven, Langkawi",
+      "title": "Langkawi Island & SkyBridge",
       "category": "destinations",
       "categoryName": "Malaysia Destinations",
-      "image": "assets/images/destinations/langkawi-beach.jpg"
+      "image": "assets/tourist attraction photos/langkawi/langkawi (1).jpeg"
+    },
+    {
+      "id": "gal-d7",
+      "title": "Sekinchan Selangor Paddy Fields & Tour",
+      "category": "destinations",
+      "categoryName": "Malaysia Destinations",
+      "image": "assets/tourist attraction photos/Sekinchan selangor Tour/Sekinchan selangor Tour (1).jpeg"
     }
   ],
   "enquiries": []
 };
 
 const Store = (function () {
-  const STORAGE_KEY = 'ali_global_travel_data_v5';
+  const STORAGE_KEY = 'ali_global_travel_data_v6';
   let isApiAvailable = false;
   let cache = null;
 

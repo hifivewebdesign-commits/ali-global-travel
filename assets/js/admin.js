@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     tbody.innerHTML = tours.map(t => `
       <tr>
         <td><strong>${t.number}</strong></td>
-        <td><img src="${t.image}" class="table-thumb" alt="${t.title}" onerror="this.src='assets/images/destinations/kuala-lumpur.jpg'"></td>
+        <td><img src="${t.image}" class="table-thumb" alt="${t.title}" onerror="this.src='assets/tourist attraction photos/KL city tour/KL city tour (1).jpeg'"></td>
         <td>
           <strong>${t.title}</strong><br>
           <span style="font-size:0.8rem; color:var(--admin-muted);">${(t.landmarks || []).slice(0, 3).join(', ')}...</span>
@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       number: `TOUR 12`,
       title: '',
       category: 'city',
-      image: 'assets/images/destinations/kuala-lumpur.jpg',
+      image: 'assets/tourist attraction photos/KL city tour/KL city tour (1).jpeg',
       intro: '',
       landmarks: [],
       culture: [],
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     tbody.innerHTML = destinations.map(d => `
       <tr>
-        <td><img src="${d.image}" class="table-thumb" alt="${d.name}" onerror="this.src='assets/images/destinations/kuala-lumpur.jpg'"></td>
+        <td><img src="${d.image}" class="table-thumb" alt="${d.name}" onerror="this.src='assets/tourist attraction photos/KL city tour/KL city tour (1).jpeg'"></td>
         <td><strong>${d.name}</strong></td>
         <td><span style="font-size:0.85rem; color:var(--admin-blue); font-weight:600;">${d.tagline || ''}</span></td>
         <td><p style="font-size:0.84rem; color:var(--admin-muted); margin:0;">${(d.description || '').slice(0, 75)}...</p></td>
@@ -412,7 +412,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       name: '',
       tagline: '',
       description: '',
-      image: 'assets/images/destinations/kuala-lumpur.jpg'
+      image: 'assets/tourist attraction photos/KL city tour/KL city tour (1).jpeg'
     };
 
     const modalHtml = `
