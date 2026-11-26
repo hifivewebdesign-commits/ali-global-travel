@@ -4,25 +4,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // 0. Hero Banner Video: Start playback at 10 seconds
-  const heroVideo = document.querySelector('.hero-video-bg');
-  if (heroVideo) {
-    const startAtTen = () => {
-      if (heroVideo.currentTime < 10) {
-        heroVideo.currentTime = 10;
-      }
-    };
-    if (heroVideo.readyState >= 1) {
-      startAtTen();
-    } else {
-      heroVideo.addEventListener('loadedmetadata', startAtTen, { once: true });
-    }
-    heroVideo.addEventListener('ended', () => {
-      heroVideo.currentTime = 10;
-      heroVideo.play().catch(() => {});
-    });
-  }
-
   // Initialize store and fetch settings
   await Store.init();
   const settings = await Store.getSettings();

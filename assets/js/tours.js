@@ -133,94 +133,84 @@ document.addEventListener('DOMContentLoaded', async () => {
       toursContainer.innerHTML = filtered.map(t => {
         const waUrl = getTourWhatsAppUrl(t.title);
 
-        const galleryItems = t.gallery && t.gallery.length > 0 
+        const galleryItems = (t.gallery && t.gallery.length > 0 
           ? t.gallery 
-          : [{ src: t.image, caption: t.title }];
+          : [{ src: t.image, caption: t.title }]).slice(0, 4);
 
-        const thumbsHtml = galleryItems.length > 1 ? `
-          <div class="tour-thumbs-row">
-            ${galleryItems.map((g, idx) => `
-              <button type="button" class="tour-thumb-btn ${idx === 0 ? 'active' : ''}" data-target-src="${g.src}" data-caption="${g.caption}" title="${g.caption}">
-                <img src="${g.src}" alt="${g.caption}" loading="lazy">
-              </button>
+        const photosGridHtml = `
+          <div class="pkg-photos-4-grid">
+            ${galleryItems.map(g => `
+              <div class="pkg-photo-thumb" data-lightbox data-lightbox-src="${g.src}" data-lightbox-caption="${g.caption}">
+                <img src="${g.src}" alt="${g.caption}" loading="lazy" onerror="this.src='assets/tourist attraction photos/KL city tour/KL city tour (1).jpeg'">
+                <span class="photo-caption-tag">${g.caption}</span>
+              </div>
             `).join('')}
-            <span class="tour-thumb-caption"><i class="fa-solid fa-camera"></i> ${galleryItems[0].caption}</span>
           </div>
-        ` : '';
+        `;
 
-        const landmarksHtml = t.landmarks && t.landmarks.length > 0 ? `
-          <div class="tour-spec-block">
-            <h5><i class="fa-solid fa-camera-retro" style="color:var(--secondary-blue);"></i> Landmarks & Photo Stops</h5>
-            <ul>
-              ${t.landmarks.map(l => `<li>${l}</li>`).join('')}
-            </ul>
-          </div>
-        ` : '';
+        const placesList = [
+          ...(t.landmarks || []),
+          ...(t.culture || [])
+        ];
 
-        const cultureHtml = t.culture && t.culture.length > 0 ? `
-          <div class="tour-spec-block">
-            <h5><i class="fa-solid fa-landmark" style="color:var(--secondary-blue);"></i> Culture & Sightseeing</h5>
-            <ul>
-              ${t.culture.map(c => `<li>${c}</li>`).join('')}
-            </ul>
-          </div>
-        ` : '';
-
-        const shoppingHtml = t.optionalShopping && t.optionalShopping.length > 0 ? `
-          <div class="tour-spec-block optional">
-            <h5><i class="fa-solid fa-bag-shopping" style="color:var(--travel-green);"></i> Optional Shopping</h5>
-            <ul>
-              ${t.optionalShopping.map(s => `<li>${s}</li>`).join('')}
-            </ul>
-          </div>
-        ` : '';
-
-        const themeParksHtml = t.optionalThemeParks && t.optionalThemeParks.length > 0 ? `
-          <div class="tour-spec-block optional">
-            <h5><i class="fa-solid fa-ticket" style="color:var(--travel-green);"></i> Optional Experiences & Theme Parks</h5>
-            <ul>
-              ${t.optionalThemeParks.map(tp => `<li>${tp}</li>`).join('')}
-            </ul>
-          </div>
-        ` : '';
+        const optionalList = [
+          ...(t.optionalShopping || []),
+          ...(t.optionalThemeParks || [])
+        ];
 
         return `
-          <article class="tour-card-detailed" id="${t.id}">
-            <div class="tour-card-media">
-              <span class="tour-badge-top">${t.number}</span>
-              <div class="tour-main-img-wrap" data-lightbox data-lightbox-src="${galleryItems[0].src}" data-lightbox-caption="${galleryItems[0].caption}">
-                <img src="${galleryItems[0].src}" alt="${t.title}" loading="lazy" onerror="this.src='assets/tourist attraction photos/KL city tour/KL city tour (1).jpeg'">
+          <article class="pkg-detailed-card" id="${t.id}" data-category="${t.category}">
+            <div class="pkg-header-row">
+              <div class="pkg-title-area">
+                <span class="dest-label"><i class="fa-solid fa-location-dot"></i> ${t.number} · Malaysia Tour Package</span>
+                <h3>${t.title}</h3>
               </div>
-              ${thumbsHtml}
+              <div class="pkg-duration-pill">
+                <i class="fa-regular fa-clock"></i> Private & Group Tour
+              </div>
             </div>
-            <div class="tour-card-content">
-              <div>
-                <div class="tour-header">
-                  <h3>${t.title}</h3>
-                  <p class="tour-intro">${t.intro}</p>
-                </div>
-                <div class="tour-sections">
-                  ${landmarksHtml}
-                  ${cultureHtml}
-                  ${shoppingHtml}
-                  ${themeParksHtml}
-                </div>
+
+            ${photosGridHtml}
+
+            <p style="color:var(--muted-text); margin-bottom:1.5rem; font-size:0.98rem;">${t.intro}</p>
+
+            <div class="pkg-info-columns">
+              <div class="pkg-box-detail">
+                <h5><i class="fa-solid fa-camera-retro"></i> Landmarks & Places Guests Will Visit:</h5>
+                <ul>
+                  ${placesList.map(item => `<li><i class="fa-solid fa-circle-check"></i> ${item}</li>`).join('')}
+                </ul>
               </div>
-              <div class="tour-footer">
-                <div class="tour-price-note">
-                  <i class="fa-solid fa-circle-info"></i> ${t.priceNote || 'Contact us for pricing and availability'}
-                </div>
-                <a href="${waUrl}" target="_blank" class="btn btn-whatsapp">
-                  <i class="fa-brands fa-whatsapp"></i> Enquire About ${t.title.replace('Tour', '').trim()} Tour
-                </a>
+
+              <div class="pkg-box-detail">
+                <h5><i class="fa-solid fa-star"></i> Optional Shopping & Experiences:</h5>
+                <ul>
+                  ${optionalList.length > 0 
+                    ? optionalList.map(item => `<li><i class="fa-solid fa-circle-check"></i> ${item}</li>`).join('')
+                    : `<li><i class="fa-solid fa-circle-check"></i> Customisable itinerary based on your group's preferences</li>
+                       <li><i class="fa-solid fa-circle-check"></i> Hotel pickup & drop-off with licensed driver</li>`
+                  }
+                </ul>
               </div>
+            </div>
+
+            <div class="pkg-footer-actions">
+              <div class="pkg-price-note"><i class="fa-solid fa-tag"></i> ${t.priceNote || 'Contact us for our best available pricing and availability'}</div>
+              <a href="${waUrl}" target="_blank" class="btn btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> Enquire About ${t.title.replace('Tour', '').trim()} Tour
+              </a>
             </div>
           </article>
         `;
       }).join('');
 
-      bindTourThumbs(toursContainer);
+      if (window.initLightboxTriggers) {
+        window.initLightboxTriggers();
+      }
     }
+
+    // Render all 12 tours immediately in the Homepage Packages layout
+    renderTours('all');
 
     // Attach click events to filter buttons
     filterButtons.forEach(btn => {
